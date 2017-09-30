@@ -1,2 +1,0 @@
-from my_opencv_funcs.threshold import my_threshold
-from my_opencv_funcs.my_adaptive_threshold import my_adaptive_threshold

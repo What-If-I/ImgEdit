@@ -35,7 +35,10 @@ def calc_osu_threshold(img_array):
     for k in range(256):
         P1k = float(P1[k])
         if P1k != 0:
-            res = pow(Mg * P1k - M[k], 2) / (P1k * (1 - P1k))
+            try:
+                res = pow(Mg * P1k - M[k], 2) / (P1k * (1 - P1k))
+            except ZeroDivisionError:
+                res = 0.0
         else:
             res = 0.0
         d2b.append(res)
