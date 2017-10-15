@@ -14,7 +14,7 @@ def negative(img_arr):
     res_img = img_arr.copy()
     for x, row in enumerate(res_img):
         for y, p in enumerate(row):
-            res_img[x, y] -= 255.0
+            res_img[x, y] = 255.0 - p
     return res_img
 
 
@@ -27,10 +27,16 @@ def logimage(img_arr, c):
 
 
 def powimage(img_arr, c, yi):
+    """
+    :param img_arr: image numpy array
+    :param c: const
+    :param yi: power
+    """
     res_img = img_arr.copy()
     for x, row in enumerate(res_img):
         for y, p in enumerate(row):
-            res_img[x, y] = c * pow(p, yi)
+            new_p = c * pow(p, yi)
+            res_img[x, y] = new_p if new_p < 255 else 255
     return res_img
 
 
