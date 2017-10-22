@@ -8,9 +8,9 @@ gray_image = cv.cvtColor(image, cv.COLOR_BGR2GRAY)
 
 
 _retval, binary = cv.threshold(gray_image, 120, 255, cv.THRESH_BINARY | cv.THRESH_OTSU)
-adaptive = cv.adaptiveThreshold(gray_image, 255, cv.ADAPTIVE_THRESH_MEAN_C, cv.THRESH_BINARY, 51, 10)
+adaptive = cv.adaptiveThreshold(gray_image, 255, cv.ADAPTIVE_THRESH_MEAN_C, cv.THRESH_BINARY, 15, 15)
 my_img = my_threshold(gray_image)
-my_img2 = my_adaptive_threshold(gray_image, 51, 1.0)
+my_img2 = my_adaptive_threshold(gray_image, 10, 0.75)
 
 cv.imshow("Original", image)
 cv.imshow("gray", gray_image)
