@@ -5,9 +5,9 @@ import numpy as np
 
 
 def hist_lines_opencv(im):
+    """OpenCV Calc Hist"""
     h = np.zeros((300, 256, 3))
     hist_item = cv.calcHist([im], [0], None, [256], [0, 256])
-    # cv2.normalize(hist_item,hist_item,0,255,cv2.NORM_MINMAX)
     hist = np.int32(np.around(hist_item))
     for x, y in enumerate(hist):
         cv.line(h, (x, 0), (x, y), (255, 255, 255))
@@ -24,10 +24,10 @@ def count_pixels(img_array):
 
 def my_calc_hist(img_array):
     counted_pixels_by_brightness = count_pixels(img_array)
-    max, min = img_array.max, img_array.min
     total_amount_of_pixels = float(img_array.size)
     pixel_probabilities = {
-        brightness: amount / total_amount_of_pixels for brightness, amount in counted_pixels_by_brightness.items()
+        brightness: amount / total_amount_of_pixels for brightness, amount in
+        counted_pixels_by_brightness.items()
     }
     probs = []
     for i in range(256):
@@ -36,9 +36,8 @@ def my_calc_hist(img_array):
 
 
 def calc_hist(img_array):
+    """Equlize image"""
     max_, min_ = img_array.max(), img_array.min()
-    total_amount_of_pixels = float(img_array.size)
-    counted_pixels_by_brightness = count_pixels(img_array)
     probs = my_calc_hist(img_array)
     for i, prob in enumerate(probs):
         probs[i] = probs[i-1] + prob
