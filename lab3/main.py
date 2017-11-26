@@ -19,6 +19,5 @@ cv.imshow("equlized", eq_img)
 cv.imshow("equlized_hist", hist_lines_opencv(eq_img))
 
 
-
 cv.waitKey(0)
 cv.destroyAllWindows()
