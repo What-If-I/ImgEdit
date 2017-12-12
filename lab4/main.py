@@ -7,7 +7,7 @@ import functions as my_funcs
 img_path = "../image.png"
 
 gray_image = cv.imread(img_path, flags=0)
-gray_image = cv.imread("../image.png", flags=0)
+
 averaged_img = my_funcs.average_blur_filter(gray_image, 3)
 opencv_averaged_img = cv.blur(gray_image, (6, 6))
 gausian_blur_img = my_funcs.gausian_blur_filter(gray_image, 5, 1.0)
@@ -25,7 +25,6 @@ log_filter = my_funcs.log_filter(gray_image)
 dog_filter = my_funcs.dog_filter(gray_image, 3.0, 5.5)
 sharpness_filter = my_funcs.sharpness_filter(gray_image)
 
-# cv.imshow("Original", image)
 cv.imshow("gray", gray_image)
 cv.imshow("averaged", averaged_img)
 cv.imshow("opencv_averaged_img", opencv_averaged_img)

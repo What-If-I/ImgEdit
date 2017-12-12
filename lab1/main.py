@@ -12,7 +12,7 @@ linear_img = linear(gray_image, 3.5, 255.0)
 # преобразования полутонового изображения в негатив.
 negative_img = negative(gray_image)
 # логарифмического преобразования полутонового изображения.
-logimage_img = logimage(gray_image, 50.0)
+logimage_img = logimage(gray_image, 40.0)
 # степенного преобразования полутонового преобразования.
 powimage_img = powimage(gray_image, 1.4, 1.1)
 # кусочно-линейного преобразования изображения полутонового изображения.
@@ -28,14 +28,15 @@ pilaobraznoe_img = pilaobraznoe(gray_image, 2)
 
 cv.imshow("Original", image)
 cv.imshow("gray_image", gray_image)
-cv.imshow("linear_img", linear_img)
-cv.imshow("negative_img", negative_img)
-cv.imshow("powimage_img", powimage_img)
-cv.imshow("logimage_img", logimage_img)
-cv.imshow("partlinear_img", partlinear_img)
-cv.imshow("brightness_img", brightness_img)
-cv.imshow("contrast_zoom_img", contrast_zoom_img)
-cv.imshow("pilaobraznoe_img", pilaobraznoe_img)
+cv.imshow("Linear", linear_img)
+cv.imshow("Negative", negative_img)
+cv.imshow("Log", powimage_img)
+cv.imshow("Pow", logimage_img)
+cv.imshow("Threshold", threshold_img)
+cv.imshow("Partlinear", partlinear_img)
+cv.imshow("Brightness", brightness_img)
+cv.imshow("Contrast zoom", contrast_zoom_img)
+cv.imshow("Contrast saw", pilaobraznoe_img)
 
 cv.waitKey(0)
 cv.destroyAllWindows()
